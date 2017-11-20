@@ -8,9 +8,10 @@ import * as compression from 'compression';
 import * as cors from 'cors';
 
 // import routers
-import PostRouter from './router/PostRouter';
 import UserRouter from './router/UserRouter';
-import keys from '../config/keys';
+
+// import keys
+const keys = require('../config/keys');
 
 // server class
 class Server {
@@ -24,7 +25,8 @@ class Server {
 
   public config() {
     // mongoose stuff for local and prod
-    const MONGO_URI = 'mongodb://localhost/test-ts-blog';
+    // to be moved to
+    const MONGO_URI = keys.mongoURI;
     mongoose.connect(MONGO_URI);
 
     // config
@@ -41,7 +43,6 @@ class Server {
     router = express.Router();
 
     this.app.use('/', router);
-    this.app.use('/api/v1/posts', PostRouter);
     this.app.use('/api/v1/users', UserRouter);
   }
 }

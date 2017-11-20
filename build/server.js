@@ -9,8 +9,9 @@ var helmet = require("helmet");
 var compression = require("compression");
 var cors = require("cors");
 // import routers
-var PostRouter_1 = require("./router/PostRouter");
 var UserRouter_1 = require("./router/UserRouter");
+// import keys
+var keys = require('../config/keys');
 // server class
 var Server = /** @class */ (function () {
     function Server() {
@@ -20,7 +21,8 @@ var Server = /** @class */ (function () {
     }
     Server.prototype.config = function () {
         // mongoose stuff for local and prod
-        var MONGO_URI = 'mongodb://localhost/test-ts-blog';
+        // to be moved to
+        var MONGO_URI = keys.mongoURI;
         mongoose.connect(MONGO_URI);
         // config
         this.app.use(bodyParser.json());
@@ -34,7 +36,6 @@ var Server = /** @class */ (function () {
         var router;
         router = express.Router();
         this.app.use('/', router);
-        this.app.use('/api/v1/posts', PostRouter_1.default);
         this.app.use('/api/v1/users', UserRouter_1.default);
     };
     return Server;
