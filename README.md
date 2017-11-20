@@ -13,8 +13,10 @@ DELETE http://localhost:3000/api/v1/users/:username
 ### Instructions:
 
 1. Clone
-2. `yarn ts`
-3. `yarn server`
+2. cd into the root directory
+3. `yarn install`
+4. `yarn ts`
+5. And in another terminal tab, but same directory: `yarn server`
 
 It is set up to work with an external MongoDB, so it should work right out of
 the box without MongoDB running locally.
