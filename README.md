@@ -1,6 +1,6 @@
 # User API
 
-### A user API that doesn't delete the user if the DELETE endpoint is taken. Instead a switch is toggled, and the user can't be found after that. The DBA will still be able to use the user data, however the end points wont reveal the data.
+#### A user API that doesn't delete the user if the DELETE endpoint is taken. Instead a switch is toggled, and the user can't be found after that. The DBA will still be able to use the user data, however the end points wont reveal the data.
 
 ```
 GET http://localhost:3000/api/v1/users
