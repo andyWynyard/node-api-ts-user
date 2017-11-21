@@ -15,8 +15,15 @@ DELETE http://localhost:3000/api/v1/users/:username
 1. Clone
 2. cd into the root directory
 3. `yarn install`
-4. `yarn ts`
-5. And in another terminal tab, but same directory: `yarn server`
+4. `tsc` (alternatively there is a yarn script `yarn ts` that allows for changes
+   to be made).
+5. `yarn server` (if the `yarn ts` script is continuously running, this will
+   need to be in another terminal tab).
 
-It is set up to work with an external MongoDB, so it should work right out of
-the box without MongoDB running locally.
+#### It is set up to work with an external MongoDB, so it should work right out of the box without MongoDB running locally.
+
+The model is set up with these variables, not all are needed. Please look at the
+model for info on specifics:
+
+fName, lName, username, email, nationality, phone, primaryAddress,
+deliveryAddress, postalCode, city, country, password
