@@ -27,7 +27,7 @@ class Server {
     // mongoose stuff for local and prod
     // to be moved to
     const MONGO_URI = keys.mongoURI;
-    mongoose.connect(MONGO_URI);
+    mongoose.connect('mongodb://localhost/test_4');
 
     // config
     this.app.use(bodyParser.json());
